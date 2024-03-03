@@ -1,8 +1,8 @@
-# info de la materia: ST0263 <Top. Telematica>
+## ST0263 <Top. Telematica>
 #
-# Estudiante(s): Mateo Muñoz Cadavid, mmunozc4@eafit.edu.co
+## Mateo Muñoz Cadavid, mmunozc4@eafit.edu.co
 #
-# Profesor: Edwin Nelson Montoya Múnera , emontoya@eafit.edu.co
+## Edwin Nelson Montoya Múnera , emontoya@eafit.edu.co
 #
 
 # Reto 1 y 2
@@ -50,6 +50,5 @@
 ## 5. otra información que considere relevante para esta actividad.
 
 ### referencias:
-
 ### https://github.com/st0263eafit/st0263-241/blob/main/README.md
 ### https://grpc.io/docs/languages/python/basics/
