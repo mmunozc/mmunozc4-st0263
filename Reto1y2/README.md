@@ -10,7 +10,7 @@
 # 1. breve descripción de la actividad
 #
 <texto descriptivo>
-#1.1. El desarrollo del reto ha resultado en la creación de un sistema P2P, aprovechando microservicios que se comunican a través de gRPC. Esta implementación ha permitido establecer una comunicación efectiva entre los pear de la red, sin depender de un servidor centralizado. Cada par se conecta exitosamente a un servidor de arranque (Pear #1), facilitando así el inicio y la organización de la red. Además, se ha logrado cumplir con todos los requisitos de despliegue y configuración en el entorno de AWS para las instancias de cada pear, garantizando un funcionamiento óptimo en dicho entorno.
+## 1.1. El desarrollo del reto ha resultado en la creación de un sistema P2P, aprovechando microservicios que se comunican a través de gRPC. Esta implementación ha permitido establecer una comunicación efectiva entre los pear de la red, sin depender de un servidor centralizado. Cada par se conecta exitosamente a un servidor de arranque (Pear #1), facilitando así el inicio y la organización de la red. Además, se ha logrado cumplir con todos los requisitos de despliegue y configuración en el entorno de AWS para las instancias de cada pear, garantizando un funcionamiento óptimo en dicho entorno.
 
 ## 1.2. Se han identificado varios aspectos que no se cumplieron completamente en la implementación del proyecto. En primer lugar, la funcionalidad de transferencia de archivos y la confirmación de dicha acción no fueron correctamente implementadas, lo que limita la capacidad del sistema para intercambiar datos entre los pears de la red de manera efectiva. Además, se observa una inconsistencia en la conexión entre los pears, con algunas instancias en las que la conexión no se establece correctamente.
 
