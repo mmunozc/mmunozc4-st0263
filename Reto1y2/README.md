@@ -23,31 +23,19 @@
 
 ### Configuración del Proyecto: Los parámetros de configuración, como la dirección IP, el puerto y otros detalles específicos, se gestionan mediante archivos de configuración. Esta estructura permite una configuración flexible y adaptable a diferentes entornos de ejecución, facilitando así la gestión y la portabilidad del proyecto.
 
-### Detalles tecnicos: 
 
-### Organizacion del sistema:
+### Organizacion del sistema: ![alt text](image.png)
 
-### como se compila y ejecuta.
-### detalles del desarrollo.
-### detalles técnicos
-### descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-### opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
-### 
-### opcionalmente - si quiere mostrar resultados o pantallazos 
+### como se compila y ejecuta: Cliente: Compilación del Protocolo gRPC: Utiliza el comando específico para compilar el archivo .proto y generar los stubs necesarios para la comunicación gRPC. Instalación de Dependencias: Ejecuta pip install -r requirements.txt para instalar todas las dependencias especificadas. Ejecución del Cliente: Inicia el script main.py. Durante la ejecución, se solicitará ingresar la IP pública para conectarse al servidor de arranque.
+### Servidor de Arranque: Instalación de Node.js: Sigue los pasos para instalar Node.js utilizando el comando adecuado.     Arranque del Servidor: Ejecuta sudo node main.js para iniciar el servidor, el cual escuchará en el puerto 8000.
+
+### detalles técnicos: La ip, y los puertos se configuran por AWS, cada instancia siendo un pear diferente:
+![alt text](image-1.png)
+![alt text](image-2.png)
 
 # 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
 
-# IP o nombres de dominio en nube o en la máquina servidor.
-
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-
-## como se lanza el servidor.
-
-## una mini guia de como un usuario utilizaría el software o la aplicación
-
-## opcionalmente - si quiere mostrar resultados o pantallazos 
-
-## 5. otra información que considere relevante para esta actividad.
+### Guia de uso, y descripcion del ambiente de ejecucion: https://eafit-my.sharepoint.com/personal/mmunozc4_eafit_edu_co/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmmunozc4_eafit_edu_co%2FDocuments%2FGrabaciones%2FReunión%20con%20Mateo%20Muñoz%20Cadavid-20240303_233007-Grabación%20de%20la%20reunión%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
 
 ### referencias:
 ### https://github.com/st0263eafit/st0263-241/blob/main/README.md
