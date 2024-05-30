@@ -1,111 +1,99 @@
-### Info de la Materia: Topicos Especiales en Telematica-st0263
+
 
 ### Estudiante:
-- Miguel Angel Martinez Florez, mamartinef@eafit.edu.co
+- Mateo Muñoz Cadavid, mmunozc4@eafit.edu.co
 
 ### Profesor:  Edwin Nelson Montoya Munera, emontoya@eafit.edu.co  
 
-# Laboratorio 3-1: GESTIÓN DE ARCHIVOS EN HDFS Y S3 PARA BIG DATA
+# Laboratorio 5: GESTIÓN DE ARCHIVOS EN HDFS Y S3 PARA BIG DATA
 
 ##  Objetivo
-
+- **Crear un Cluster AWS EMR en Amazon para trabajar todos los laboratorios.**
 ## Descripción de la Actividad 
+- Esta guía describe los pasos necesarios para instalar y configurar un clúster EMR (Elastic MapReduce) en AWS (Amazon Web Services). El objetivo es usar herramientas de big data como Hadoop y Spark para análisis de datos.
 
 ## Guia paso a paso 
-- **LAB 3-0: Crear un Cluster AWS EMR en Amazon para trabajar todos los laboratorios.**
-- NOTA: Esta guía describe los pasos necesarios para instalar y configurar un clúster EMR (Elastic MapReduce) en AWS (Amazon Web Services). El objetivo es usar herramientas de big data como Hadoop y Spark para análisis de datos.
+
 - Prerrequisitos
   - Antes de iniciar, asegúrate de tener lo siguiente:
     - Una cuenta de AWS.
-    - Claves SSH para acceder al clúster.
-- Pasos para Crear un Clúster EMR
-  - Accede a EC2: Ve al servicio EC2 en la consola de AWS.
-  - Generar Claves SSH: Crea un nuevo par de claves SSH (si no tienes uno). Guarda la clave privada en tu máquina local para acceder al máster del clúster.
+    - Generar Claves SSH: Crea un nuevo par de claves SSH (si no tienes uno). Guarda la clave privada en tu máquina local para acceder al máster del clúster.
+
 - Iniciar la Creación del Clúster EMR
   - Acceder a EMR: Desde la consola de AWS, navega a EMR.
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/7e002b7c-a2f9-473f-8e1a-f7fdab81360a)
   - Crear Clúster: Haz clic en "Create cluster".
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/baef0681-6fd2-454c-bfcb-fa5e2edf0188)
-  - Opciones Avanzadas: Selecciona "Go to advanced options".
-- Configurar el Clúster
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/96fc047c-d94e-4615-986d-6d2f41cfb282)
+- Configurar el Clúster de la siguiente manera;
+  - Configuración del Catálogo de datos de AWS Glue
   - Versión de EMR: Selecciona la versión 6.14.0
-  - Componentes del Clúster:
-    - Hadoop: Framework para el procesamiento distribuido de grandes conjuntos de datos.
-    - Hive: Data warehouse que facilita consultas SQL-like sobre grandes conjuntos de datos.
-    - Hue: Interfaz de usuario web para gestionar Hadoop.
-    - Spark: Framework de procesamiento de datos en tiempo real.
-    - Livy: Servicio REST para la interacción con Spark (opcional, no se selecciona en este caso).
-    - HBase: Base de datos NoSQL distribuida.
-    - JupyterHub: Entorno de notebooks para data science y análisis.
-    - Entre otros.
-- Configuración del Catálogo de datos de AWS Glue
+  - Instalar las siguientes aplicaciones
+  
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/c86e4531-1361-4c45-ac91-78c0e0368186)
+
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/0948597d-f9d1-4403-b171-8d662d2992b5)
+
 - Configurar Persistencia de Notebooks en S3
   - Configurar S3: Para persistir los notebooks creados en JupyterHub, configura un bucket S3.
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/9947a521-13c3-4986-9ddd-32803c394535)
+    
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/523e67bf-7461-4f07-bede-c6d1b94d125f)
+
+
     ```
           [
             {
                 "Classification": "jupyter-s3-conf",
                 "Properties": {
                     "s3.persistence.enabled": "true",
-                    "s3.persistence.bucket": "MyJupyterBackups"
+                    "s3.persistence.bucket": "mmunozcnotebooks"
                 }
             }
         ]
     ```
-    - Crear Bucket: Ve a S3 y crea un nuevo bucket. El nombre debe ser único a nivel global (por ejemplo, notebooks-miguel).
 - Configuración de Hardware
-  - Tipo de Instancia: Cambia las instancias por m5.xlarge (recomendado para cuentas de AWS Educate).
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/88f5bb55-74d7-464a-afeb-bc0ff34ecce2)
-  - Uso de Instancias Spot: Selecciona instancias Spot para reducir costos.
-  - Almacenamiento: Configura 20 GB de almacenamiento para los nodos.
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/cc75b0ff-f487-4a9f-b41a-cbbe24e3af23)
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/1f2a24b0-71c5-4347-a8d1-6da7ff49f3a1)
-- Configurar Auto Terminación
-  - Auto Terminación: Habilita la auto terminación para que el clúster se destruya después de 1 hora de inactividad, ahorrando costos.
+  - Dejar por defecto las opciones
+  - 
 - Finalizar Configuración
-  - Nombre del Clúster: Asigna un nombre descriptivo, por ejemplo, mi-cluster.
   - Clave SSH: Selecciona la clave SSH creada previamente.
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4b0bbe09-563f-4585-acab-b251ba60f2eb)
-  - Rol de servicio de Amazon EMR
-    - Escoger la opcion "ERM_DefaultRole"
-  - Perfil de instancia de EC2 para Amazon EMR
-    - Escoger la opcion "ERM_EC2_DefaultRole"
-  - Rol de escalamiento automático personalizado - opcional
-    - Escoger la opcion "ERM_AutoScaling_DefaultRole"
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c204f52b-fb45-4e3d-8398-aada4a1834f2)
+    
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/94aea03b-e3fd-404e-9552-3c443a50290b)
+  
+  - Rol de servicio de Amazon EMR y Perfil de instancia de EC2 para Amazon EMR deben ser las Default
+    
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/4aa35bb2-1293-4960-8bd1-9871d2ba93a5)
+  
+  - Rol de escalamiento automático debe ser el determinado para academy
+    
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/d706431e-b9a0-417b-bf7d-560130f484d8)
+  
   - Crear Clúster: Haz clic en "Create cluster".
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2aa6e678-c434-4fd6-8765-e95c2ddd3bd3)
--  Esperar la Creación del Clúster
-  - La creación del clúster tomará aproximadamente 20-25 minutos. Una vez que todos los nodos estén en estado "Running" y todo esté en verde, el clúster estará listo para usarse.
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/856b44fa-4fa1-45f1-aaea-3ea78066b59a)
-- Consideraciones Adicionales
-  - Puertos: Asegúrate de abrir los puertos necesarios para acceder a las interfaces de administración del clúster.
-  - Persistencia en S3: Configura correctamente el bucket S3 para que los datos de los notebooks sean persistentes.
+    
+- La creación del clúster tomará aproximadamente 20-25 minutos.
+  
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/fc9f7e7b-4675-46b6-b88b-3307e163ed9d)
 
-### Pasos posteriores despues de haber creado el cluster 
-Esta guía detalla el proceso de configuración y uso de un clúster en Amazon EMR, incluyendo la creación de buckets en S3, conexión SSH al nodo master, apertura de puertos, y uso de aplicaciones como JupyterHub y Zeppelin. Se presentan los pasos necesarios y aspectos importantes a considerar para una correcta implementación y manejo de los recursos.
+### Con el cluster creado 
 
-- Creación del Clúster
-  - Verificación del Clúster
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/42867942-9c59-4f4b-9823-28d54a58ea2d)
-    - Después de aproximadamente 25 minutos, el clúster debería estar creado.
-    - Un círculo en verde indica que el clúster está operativo.
-  - Almacenamiento en S3
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2a426b6e-faec-4379-90ed-841fba09b94c)
-    - Los notebooks deben ser almacenados en S3.
-    - Crear un bucket en S3 llamado notebooks.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/66109d2e-4d0f-41dd-a439-87c0fff2e171)
-    - Recuerda que el nombre del bucket debe tener el mismo nombre que escogimos al configurar la Persistencia de Notebooks en S3 del cluster
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/1ea196fa-e96e-42f7-8ba4-d8a09403dbb7)
-    - Crear bucket
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4794e263-ecc6-41ec-82a6-e90f01a46f81)
-    - Confirmamos que el bucket se haya creado exitosamente.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/5b59db5a-032b-40ec-be98-2e5fc7d4bac6)
-  - Configuración del Bucket
-    - Asegurarse de que el bucket está listo para almacenar los Jupyter Notebooks.
+- Cambio de los puertos de las instancias;
+  
+ - Accedemos a la instancia master
+   ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/c5028ec2-7804-4bff-b7c4-b55a03c7a370)
+ - Y modificamos los siguientes puertos:
+   ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/668015f6-6d9a-49d9-9707-90ffbcfb7ca9)
+
+### Acceso a las aplicaciones
+- Ingresamos a las aplicaciones del cluster y copiamos la direccion correspondiente a HUE y la pegamos en el navegador
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/7a170705-9516-4092-b08c-192b8887e161)
+- Creamos usuario y contraseña
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/1cf888ca-ee1d-4398-9cbe-39e222e00cb7)
+- Veremos lo siguiente
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/7b4ebc9e-166c-48d9-ae66-6c8f66a1c091)
+- Ingresamos a "Files" y veremos el siguiente error
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/000a9cac-aaf7-4949-922d-d9a8416df24b)
+
+
+
+
+
+
 - Conexión al Clúster
   - volvemos al servicio ERM a ver nuestro cluster
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ad483a9b-6f49-4cbe-a044-309484643be6)
