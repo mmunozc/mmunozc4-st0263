@@ -26,15 +26,15 @@
   - Configuración del Catálogo de datos de AWS Glue
   - Versión de EMR: Selecciona la versión 6.14.0
   - Instalar las siguientes aplicaciones
-  
-  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/c86e4531-1361-4c45-ac91-78c0e0368186)
+    
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/b99e32ce-5784-4057-bf1b-66660ca9595c)
 
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/0948597d-f9d1-4403-b171-8d662d2992b5)
 
 - Configurar Persistencia de Notebooks en S3
   - Configurar S3: Para persistir los notebooks creados en JupyterHub, configura un bucket S3.
     
-  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/523e67bf-7461-4f07-bede-c6d1b94d125f)
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/7e69ab97-2d9d-4628-9165-8d28c0f5bc64)
+
 
 
     ```
@@ -48,222 +48,137 @@
             }
         ]
     ```
+    
 - Configuración de Hardware
   - Dejar por defecto las opciones
-  - 
+  
 - Finalizar Configuración
   - Clave SSH: Selecciona la clave SSH creada previamente.
     
-  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/94aea03b-e3fd-404e-9552-3c443a50290b)
-  
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/ec035bba-7c69-4210-9fdf-d4962a353cf0)
+
   - Rol de servicio de Amazon EMR y Perfil de instancia de EC2 para Amazon EMR deben ser las Default
     
-  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/4aa35bb2-1293-4960-8bd1-9871d2ba93a5)
-  
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/413cc7de-6483-40c3-867a-8afbc504aea1)
+
   - Rol de escalamiento automático debe ser el determinado para academy
     
-  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/d706431e-b9a0-417b-bf7d-560130f484d8)
-  
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/58d46476-aa4f-458d-b71a-4904a8305aa9)
+
   - Crear Clúster: Haz clic en "Create cluster".
     
-- La creación del clúster tomará aproximadamente 20-25 minutos.
-  
-  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/fc9f7e7b-4675-46b6-b88b-3307e163ed9d)
+  - La creación del clúster tomará aproximadamente 20-25 minutos.
+  ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/f65ddd3a-0b61-49f6-9eff-f65fe4c51857)
+
 
 ### Con el cluster creado 
 
-- Cambio de los puertos de las instancias;
+- Cambio de los puertos de las instancias
   
  - Accedemos a la instancia master
-   ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/c5028ec2-7804-4bff-b7c4-b55a03c7a370)
+   
+   ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/eb451d80-0d20-4f1c-adaf-23632e7b834c)
+
+   
  - Y modificamos los siguientes puertos:
+   
    ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/668015f6-6d9a-49d9-9707-90ffbcfb7ca9)
 
-### Acceso a las aplicaciones
+### Acceso a las aplicaciones - HUE
+
 - Ingresamos a las aplicaciones del cluster y copiamos la direccion correspondiente a HUE y la pegamos en el navegador
+  
 ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/7a170705-9516-4092-b08c-192b8887e161)
 - Creamos usuario y contraseña
+  
 ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/1cf888ca-ee1d-4398-9cbe-39e222e00cb7)
 - Veremos lo siguiente
+  
 ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/7b4ebc9e-166c-48d9-ae66-6c8f66a1c091)
 - Ingresamos a "Files" y veremos el siguiente error
+  
 ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/000a9cac-aaf7-4949-922d-d9a8416df24b)
-
-
-
-
-
+- Ingresamos a la terminal de aws
+  
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/0d75ecd1-b91b-4566-b497-6486cac5fedc)
 
 - Conexión al Clúster
-  - volvemos al servicio ERM a ver nuestro cluster
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ad483a9b-6f49-4cbe-a044-309484643be6)
-  - Filtrar Clúster Activos(opcional si tienes varios clusters)
-    - En la interfaz de administración, filtrar para mostrar solo los clústeres activos.
-    - Damos clic en el nombre de nuestro cluster para ingresar y ver las configuraciones
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/141808d9-d5c9-4059-9c1c-eb544b3cf6cb)
-    - Conectar al nodo master vía SSH.
-      - Damos clic en el siguiente link
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/30e3db54-d738-4e16-8563-60d7f9e8c0ab)
-      - Al momento de dar clic nos aparecera lo siguiente:
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4c5008a9-9b21-4214-8b01-6b43d4aa2304)
-      - Copiamos la instruccion que nos proporciona, que en nuestro caso seria el siguiente:
-      ```
-      ssh -i ~/vockey.pem hadoop@ec2-44-210-115-214.compute-1.amazonaws.com
-      ```
-      - Abrimos una terminal(opcional):
-        - Crea una consola que tenga previamente descargada las claves para conectarse al nodo master
-        ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ad20c1c4-e6eb-4c25-89e5-bf1529f8d94e)
-
-  - Instrucciones SSH
-    - Seguir las instrucciones proporcionadas para conectarse al nodo master.
-    - Descargar las claves necesarias y usar ssh para acceder al nodo master.
-  - Uso de HDFS
-    - Una vez conectado al nodo master, utilizar HDFS para manejar el sistema de archivos distribuido.
-- Apertura de Puertos
-- En nuestro cluster, debemos dar clic en la opcion "aplicaciones"
-![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/e39c35b7-c648-4f99-bade-02930a072f43)
-- Al bajar un poco en la pagina, nos encontraremos las aplicaciones principlaes que vamos a emplear(IU de la aplicación en el nodo principal):
-![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/f8a02ccf-606b-41fd-82aa-dc3f1bb129e6)
-  - Puertos Necesarios
-    - Los puertos que deben estar abiertos son:
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/e87b61c8-c3ed-44b2-a0f2-d04d330110e1)
-      - JupyterHub: 9443
-      - Zeppelin: 8890
-      - Hue: 8888
-  - Configuración de Puertos en el Clúster
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c2b97ab5-9097-4cb9-9e66-d35139758942)
-    - En la sección de Security Groups, editar las políticas para agregar los puertos necesarios.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/9bae5d62-cd28-45e6-9396-7b2cacadc657)
-    - Verificar que el puerto 22 para SSH esté abierto.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ca556866-0f07-40da-8f17-1d8bf3ed6d21)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/17b1f3f2-6cda-4eba-960e-8c65572a1a2f)
-
-  - Verificación de Puertos
-    - Asegurarse de que los puertos estén configurados correctamente tanto en el Security Group del nodo master como en la red WiFi.
-    - Nos iremos al servico "ec2".
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/d11a9e81-6fc0-4cb6-b943-2b1eb312cd9f)
-    - A la opcion de Security Groups
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3e83bd60-cee5-4dfc-9347-fc29f4592651)
-    - Vamos a seleccionar el nodo master para editar las politicas de seguridad.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/9bce3426-f43e-4b0d-839d-c3d87e98c051)
-    - Despues de dar clic e ingresar, nos vamos a las reglas de entrada y las editamos.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/46011522-7fe9-4754-a7c8-e288ef09d16f)
-    - Verificamos que los puertos 22, 8888, 9443, 8890 esten habilitados, si no lo estan, debes crearlos.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/7b05ba66-09b8-4c19-8d4b-41b5cfee1b64)
-    - Regresamos a nustro cluster
-    - Volvemos al apartado de aplicaciones y copiamos el link de la interfaz de `HUE`.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/7976468d-0ad1-4c85-97b0-dba917da091f)
-    - Lo pegamos en el navegador, nos conectamos y podremos visualizar la siguiente interfaz:
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c3c6eb37-675d-4363-b0da-6f6a6e835d52)
-    - Creamos una cuenta
-      - Creamos un `username`
-      - Creamos un `password`
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/8f6311ca-b9ab-4bff-b20b-d297d15b9907)
-    - Al momento de crear la cuenta, visualizaremos lo siguiente:
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3250c5ff-9713-4a3e-b01d-447599c40991)
-    - Lo que observamos es la interfaz de administracion de todos los servicios de `HUE`y `Spark`
-    - En esta seccion podemos observar todos los servicios
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/05fe95b2-3a21-4ab6-adef-53dcf5af3875)
-    - Entre estos servicios, vamos a entrar al servicio `Hive` (opcional)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/e10d0271-3f88-4a47-ae4c-1b6bd4f40d48)
-    - En la interfaz SQL vamos a ingresar el siguiente comando (opcional):
-    ```
-    show databases
-    ```
-    - Corremos el comando (opcional):
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c11fd390-d9df-461d-848f-bed70d49e236)
-    - Observamos que por el momento solo tenemos una base de datos llamada `Default`.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/14f33756-47de-4485-87be-775f3c34245e)
-    - Ahora, debemos ir a la seccion "files"
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ec177434-110b-4247-b0f9-8b1b56e897de)
-    - Podemos observar un mensaje que nos indica que tenemos un error en los servicios HDFS, para poder solucionar ese error, vamos a
-    realizar los siguientes pasos:
-    - Entraremos al por SSH al nodo master del cluster, esto lo podemos hacer entrando al nodo master en el servicio ec2.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/d8e20542-62a3-4f76-bd17-436106dfe588)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/24292823-7324-47e4-bc9c-47bb89195c25)
-    - Entrar al EC2 master por medio de SSH:
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/f6fdf52a-664a-4a39-96ef-f5db9219280e)
-    - Realizamos los siguientes comandos:
-    - Ejecuta el siguiente comando para editar el archivo hue.ini:
-    ```
-    sudo sed -i 's/.ec2.internal:14000/.ec2.internal:9870/' /etc/hue/conf/hue.ini
-    ```
-    - A continuación, reinicia el servicio hue:
-    ```
-    sudo systemctl restart hue
-    ```
-    - Con estos pasos debemos poder solucionar el error, y veriamos lo siguiente en el servicio Hue:
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2aa51d56-b582-4727-8873-6a345ccc1cdb)
-    - Ya podriamos crear y subir cualquier archivo que necesitemos para HDFS.
-
+  - volvemos a nuestro cluster
     
-- Uso de JupyterHub y Zeppelin
-  - Acceso a JupyterHub
-    - Conectar a JupyterHub usando la URL y el puerto configurado (9443).
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/b2ab57f6-97ca-4827-bb5b-d90d09dd88c5)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/01e1cfc5-eb46-4a29-aeda-b9e185494ce4)
-    - Crear un usuario y contraseña la primera vez que se ingrese.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/0aa2fd20-8bb8-4324-bab6-83471ccd1025)
-      - Utilizar el usuario por defecto:
-        - jovyan
-        - jupyter
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/23164d8d-fc75-4b5f-a7ea-f53d91bfeb79)
-  - Creación y Almacenamiento de Notebooks
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/8b9f5c7e-54a1-474d-a535-aeb1fd97c9af)
-    - Crear notebooks en JupyterHub.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/00735ddd-c04f-4779-91a7-c73358de4d19)
-    - Asegurarse de que los notebooks se almacenan en S3 para evitar la pérdida de datos.
-      - ponemos otro nombre al notebook para verificar
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/403163a9-6506-4a6a-9f4f-7c19588a14e7)
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/b4634b0e-906f-48af-8d59-9bf43f98c646)
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/28fc70ea-b1a7-438b-abf8-eadebb2d9595)
+    ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/74a1589b-6091-49b0-be72-9fd024b2f4e5)
+    
+  - Conectar al nodo master vía SSH.
+      - Damos clic en "Conectarse al nodo principal mediante SSH
+        
+      ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/ac958e91-7d10-45f1-bddd-2372d63beadb)
+    
+      - Al momento de dar clic nos aparecera lo siguiente
+        
+      ![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/b5feb558-a8d5-4719-b350-ebf3550925a9)
+    
+      - Copiamos la instruccion que nos proporciona
+        
+- En la termnal
+  
+  - Pegamos y damos enter
+    
+  - Posterior mente pegamos los siguientes comandos
+    
+  ``` sudo sed -i 's/.ec2.internal:14000/.ec2.internal:9870/' /etc/hue/conf/hue.ini```
 
-  - Configuración de Spark en JupyterHub
-    - Verificar las variables spark y SparkContext para confirmar que Spark está configurado correctamente.
-  - Uso de Zeppelin
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2b84d53a-8712-4bb1-8ba8-ca3f9fa075fa)
-    - Conectar a Zeppelin usando el puerto 8890.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/15fad67b-9fd9-471d-8343-77a727ef6189)
-    - Creamos un nuevo "note"
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/00e9580a-2a66-4273-be43-753fc2a07022)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/6cea8361-14e8-428c-93b6-60f1f2488e8f)
-    - Haciendo los siguientes comandos  podemos confirmar que ya tenemos conexiones spark
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/8493fbf1-95fc-4392-b17f-4f39cf8890d0)
-    - Zeppelin soporta múltiples lenguajes, incluyendo Spark y SQL.
-- Administración y Otros Servicios
-  - Interfaz de Administración de EMR
-    - Usar la interfaz de administración para manejar el clúster y sus servicios.
-  - Manejo de Archivos en HDFS y S3
-    - Almacenar datos importantes en S3 para asegurar su persistencia.
-    - Utilizar HDFS para pruebas y manejo de datos temporales en el clúster.
-- Consejos y Consideraciones
-  - Seguridad
-    - Asegurar la apertura correcta de puertos solo para conexiones necesarias.
-    - Configurar usuarios y contraseñas adecuadas para acceso seguro a JupyterHub y Zeppelin.
-  - Persistencia de Datos
-    - Almacenar datos críticos en S3 para evitar pérdidas.
-    - Utilizar HDFS para datos temporales y pruebas.
+  ``` sudo systemctl restart hue ```
+  
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/72c1f9e1-b972-470d-9413-36e97e5f88f9)
 
-## Laboratorio HDFS
-- Por Terminal: (cada persona tiene su propio servidor ec2 del master EMR)
-![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/f5c31d38-2ca4-4f44-ae28-d5d07e0199dc)
-- GESTIÓN DE ARCHIVOS VÍA HUE en AMAZON EMR
-  - Nos vamos a la seccion de files en el servicio hue:
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/46a002cc-91a6-4efd-8e66-a0e3a7cd7b80)
-  - Vamos a crear un directorio nuevo llamado "datasets" y uno llamado "onu".
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3e208cab-0cdd-427f-9418-4f78541b704b)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/62811726-e19f-426d-9c4f-d20aef231845)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/563c4b85-b515-40dd-9f17-4c16b786098f)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/91b899e6-0572-42f4-8482-8d1e40ad779e)
-  - Vamos a subir los siguientes archivos en nuestra carpeta onu dentro de datasets
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/d2ad40a2-cf7f-4493-87b2-c08185d8b2ce)
-  - los archivos que vamos a tomar son los siguientes
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/1c939e1a-a770-407b-b04d-afe80d146294)
-  - NOTA: Recuerda que esos archivos se encuentran en la carpeta onu del directorio datasets que esta dentro del repositorio
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4e63ab3f-927c-40de-8ce4-8829f1b44687)
-  - Ahora podemos ver el contenido de nuestros archivos en el servicio hue:
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/65bbbcf2-23e9-4f61-8786-c03f0998a8cc)
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2a62c3e0-3ccd-4d79-a6d8-04035ff92580)
+
+  ```sudo hdfs dfs -ls /user```
+  
+  ```sudo -u hdfs hdfs dfs -mkdir /user/admin```
+  
+  ```sudo -u hdfs hdfs dfs -chown admin:hdfsadmingroup /user/admin```
+  
+  ```sudo -u hdfs hdfs dfs -chmod 755 /user/admin```
+  
+  ```sudo systemctl restart hue```
+
+  - NOTA: DONDE DICE ADMIN DEBE DE IR EL NOMBRE DE USUARIO QUE SE CREO 
+
+- Si volvemos a Hue ya veremos lo siguiente:
+  
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/2cca31b2-782f-4c7a-9d54-55e546706ddf)
+
+- Creamos dos directorios de forma tal que queden de la siguiente manera; datasets\onu
+  
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/b61aa20a-06c2-48c4-bb1f-0fc5eb8eb2d0)
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/c6c2f7e2-c721-4eab-91c2-2e90dcc1b50c)
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/73c843cf-a949-4d48-afd1-1fc22151f4d7)
+
+
+- Dentro de onu subimos los siguientes archivos que se encuentran en la carpeta datasets
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/ad32cf5d-3e9c-42ef-8a3c-472b108a0b18)
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/acad3b31-8226-4301-9a3e-79787ded0c40)
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/4bf66874-5766-474f-bd53-43b1cc99067d)
+
+### Acceso a las aplicaciones - ZEPPELIN
+
+- De la misma forma que se abrio HUE se abre ZEPPELIN y veremos lo siguiente
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/1001d201-904f-4c75-9e1e-537b5bde8d4b)
+
+- Le damos en "Create new note"
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/13d4eaed-e978-4f62-97b6-529f70a8e1e4)
+
+- Para verificar el funcionamiente corremos los siguientes comandos 
+
+![image](https://github.com/mmunozc/mmunozc4-st0263/assets/106570098/17d99cdc-1900-48c2-8497-e472633d46a9)
+
+
     
 ## Resultados Esperados
 - Gestión de Archivos en HDFS y S3: Los estudiantes deberán demostrar habilidades prácticas en la gestión de archivos utilizando HDFS y S3 en un entorno de clúster EMR. Se espera que copien y gestionen archivos desde y hacia HDFS usando tanto HUE como SSH. Asimismo, deberán realizar las mismas operaciones con AWS S3. La verificación de estas tareas se hará a través de evidencias de las operaciones completadas, mostrando que los archivos han sido correctamente gestionados en ambos sistemas de almacenamiento.
@@ -274,7 +189,7 @@
 
 
 ## Descripción del Ambiente de Desarrollo y Técnico
-- Cluster EMR: El laboratorio se llevará a cabo en un clúster EMR previamente configurado en el Lab 3-0. Cada estudiante tiene acceso a su propio servidor EC2 del nodo maestro del clúster EMR, al cual se conectarán mediante SSH para realizar las actividades de gestión de archivos en HDFS. El clúster debe tener HUE activado y un usuario 'hadoop' creado.
+- Cluster EMR: El laboratorio se llevará a cabo en un clúster EMR previamente configurado en el Lab 5. Cada estudiante tiene acceso a su propio servidor EC2 del nodo maestro del clúster EMR, al cual se conectarán mediante SSH para realizar las actividades de gestión de archivos en HDFS. El clúster debe tener HUE activado y un usuario 'hadoop' creado.
 
 - Herramientas Utilizadas:
   - HDFS: Sistema de archivos distribuido utilizado para almacenar grandes volúmenes de datos.
