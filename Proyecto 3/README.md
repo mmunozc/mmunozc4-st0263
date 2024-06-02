@@ -13,6 +13,9 @@
 ## Descripción de la Actividad 
 - Este proyecto individual se compone de varios pasos que abarcan desde la manipulación y análisis de datos hasta el almacenamiento en servicios en la nube.
 
+## URI S3 BUCKET
+- s3://pro3bucket/
+
 ## URL S3 BUCKET
 - La URL del S3 donde estan los datos de entrada y salida del numeral 3.x
    - https://pro3bucket.s3.amazonaws.com/3.1TopDepartamentos/part-00000-86412a36-7a07-4360-bc7d-6738391be530-c000.csv
